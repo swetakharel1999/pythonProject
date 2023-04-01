@@ -1,0 +1,71 @@
+#Hangman project
+def greet (name = 'next millionare'):
+     print(userName,"Welcome back to the Rain City")
+userName = input("Good Evening,what's you name?\n")
+userName = userName.capitalize()
+greet(userName)
+userAnswer = input("Wanna play a game to guess the sales of Rain City today?\n")
+hangman = {
+    0: """
+    --|---|
+      0   |
+     / \  |
+          |
+          |
+    """,
+  1:  """
+    --|---|
+      0   |
+       \  |
+          |
+          |
+    """,
+    2:"""
+    --|---|
+      0   |
+          |
+          |
+          |
+    """,
+    3:"""
+    --|---|
+          |
+          |
+          |
+          |
+    """,
+    4:"""
+    ------|
+          |
+          |
+          |
+          |
+    """
+}
+if  userAnswer == ("yes"):
+    print("let's get started")
+    Sales = "21000"
+    Saleslength = len("Sales") * " _ "
+    print("Today's Sales is in", len(Sales), "digit numbers, so you have to guess and fill these ",Saleslength,
+          "and have",len(Sales), "trials")
+    lives = len(Sales)
+
+
+    '''def status(chances):
+        print(hangman[])
+    status(lives-1)'''
+
+    gameWon = False
+    while gameWon == False and lives > 0 :
+
+        guess = input("guess the closest approximate sales\n")
+        if guess == Sales :
+            gameWon = True
+            print("Well done, you got it, a free burger for you")
+        else:
+            lives -= 1
+            print("wrong answer")
+            print(hangman[lives])
+    else: print("the right answer is",Sales)
+
+else: print("I hope our burger makes your day better ")
